@@ -6,7 +6,6 @@ disable();
 buttons.forEach(button => button.addEventListener('click', ev => {
     const button = ev.target;
     const buttonValue = button.innerText;
-    const currentValue = display.value;
     if (ev.target.classList.contains('operator')) {
         switch (buttonValue) {
             case 'C':
@@ -25,6 +24,10 @@ buttons.forEach(button => button.addEventListener('click', ev => {
         enable();
     }
 }));
+
+function bDisable() {
+    buttons.forEach(button => button.disabled = true)
+}
 
 function disable() {
     operators.forEach(operator => operator.disabled = true);

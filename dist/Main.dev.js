@@ -9,7 +9,6 @@ buttons.forEach(function (button) {
   return button.addEventListener('click', function (ev) {
     var button = ev.target;
     var buttonValue = button.innerText;
-    var currentValue = display.value;
 
     if (ev.target.classList.contains('operator')) {
       switch (buttonValue) {
@@ -32,6 +31,12 @@ buttons.forEach(function (button) {
     }
   });
 });
+
+function bDisable() {
+  buttons.forEach(function (button) {
+    return button.disabled = true;
+  });
+}
 
 function disable() {
   operators.forEach(function (operator) {
